@@ -1,0 +1,34 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Require a file/module using node-requirer-pietropizzi",
+        "command": "node-requirer-pietropizzi:require"
+      },
+      {
+        "label": "Import a file/module using node-requirer-pietropizzi",
+        "command": "node-requirer-pietropizzi:import"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "node-requirer-pietropizzi",
+          "submenu": [
+            {
+              "label": "Require",
+              "command": "node-requirer-pietropizzi:require"
+            },
+            {
+              "label": "Import",
+              "command": "node-requirer-pietropizzi:import"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

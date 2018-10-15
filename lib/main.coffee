@@ -2,9 +2,9 @@ module.exports =
   activate: (state) ->
     @active = true
     atom.commands.add 'atom-workspace',
-      'node-requirer:require': =>
+      'node-requirer-pietropizzi:require': =>
         @createProjectView(true).toggle(true)
-      'node-requirer:import': =>
+      'node-requirer-pietropizzi:import': =>
         @createProjectView().toggle()
 
     process.nextTick => @startLoadPathsTask()
@@ -28,7 +28,7 @@ module.exports =
     @projectPaths = null
     @stopLoadPathsTask()
     @active = false
-    
+
   config:
     aliasList:
       title: 'Alias list',

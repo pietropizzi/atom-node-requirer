@@ -37,8 +37,8 @@
   },
   "activationCommands": {
     "atom-workspace": [
-      "node-requirer:require",
-      "node-requirer:import"
+      "node-requirer-pietropizzi:require",
+      "node-requirer-pietropizzi:import"
     ]
   }
 }

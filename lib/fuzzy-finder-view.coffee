@@ -78,11 +78,19 @@ class FuzzyFinderView extends SelectListView
     constOrVar = atom.config.get('node-requirer-pietropizzi.constOrVar')
     editor = atom.workspace.getActiveTextEditor()
     currentEditorPath = editor.getPath()
+    currentProjectDirectory = atom.project.getPaths()[0]
+    packageJson = require(currentProjectDirectory + '/package.json');
+
     if (pathExists.sync(filePath))
       # the file is defined locally (not an npm module)
-      relativePath = relative(currentEditorPath, filePath)
-      if relativePath[0] != '.'
-        relativePath = './' + relativePath
+      if @useOldRequireSyntax && packageJson && moduleRoot = packageJson.moduleRoots
+        moduleRootPath = currentProjectDirectory + '/' + moduleRoot
+        relativePath = relative(moduleRootPath, filePath)
+      else
+        relativePath = relative(currentEditorPath, filePath)
+        if relativePath[0] != '.'
+          relativePath = './' + relativePath
+
       relativePath = @prettifyPath(relativePath)
       name = @getNameFromFilePath(relativePath)
       # name = moduleName(filePath)

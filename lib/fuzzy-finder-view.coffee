@@ -75,6 +75,7 @@ class FuzzyFinderView extends SelectListView
     return aliases
 
   openPath: (filePath, lineNumber, openOptions) ->
+    constOrVar = atom.config.get('node-requirer-pietropizzi.constOrVar')
     editor = atom.workspace.getActiveTextEditor()
     currentEditorPath = editor.getPath()
     if (pathExists.sync(filePath))
@@ -95,9 +96,9 @@ class FuzzyFinderView extends SelectListView
       else
         name = @getNameFromFilePath(relativePath)
     if @useOldRequireSyntax
-      editor.insertText("const " + name + " = require("+ "'" + relativePath + "')")
+      editor.insertText(constOrVar + " " + name + " = require("+ "'" + relativePath + "');")
     else
-      editor.insertText("import " + name + " from "+ "'" + relativePath + "'")
+      editor.insertText("import " + name + " from "+ "'" + relativePath + "';")
 
   getFilterKey: ->
     'projectRelativePath'

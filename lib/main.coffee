@@ -34,7 +34,13 @@ module.exports =
       title: 'Alias list',
       description: 'A list of alias to use for .',
       type: 'string',
-      default: '{"lodash": "_","async":"a"}',
+      default: '{"underscore": "_", "lodash": "_", "async":"a"}',
+
+    constOrVar:
+      title: 'const or var for requires',
+      type: 'string',
+      enum: ['const', 'var']
+      default: 'const',
 
   serialize: ->
     paths = {}

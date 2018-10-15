@@ -1,7 +1,7 @@
 {
-  "name": "node-requirer",
-  "version": "0.1.12",
-  "description": "Node-requirer lets you quickly add require/import statements to any files/node_modules within your code!",
+  "name": "node-requirer-pietropizzi",
+  "version": "0.0.1",
+  "description": "Node-requirer lets you quickly add require/import statements to any files/node_modules within your code! Fork of https://github.com/tnrich/atom-node-requirer",
   "keywords": [
     "atom",
     "node",
@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "main": "./lib/main",
-  "repository": "https://github.com/tnrich/atom-node-requirer",
+  "repository": "https://github.com/pietropizzi/atom-node-requirer",
   "dependencies": {
     "async": "0.2.6",
     "atom-space-pen-views": "^2.0.0",

@@ -61,11 +61,8 @@ class FuzzyFinderView extends SelectListView
     name = filePath.slice(filePath.lastIndexOf('/')+1)
     if name.endsWith('.json')
       name = name.slice(0,-'.json'.length)
-    first = name.charAt(0)
-    startsWithUpperCase = first == first.toUpperCase()
-    name = camelcase(name)
-    if startsWithUpperCase
-      name = name.charAt(0).toUpperCase() + name.slice(1)
+    # pascalCase make the first letter uppercase
+    name = camelcase(name, { pascalCase: true })
     return name
   getAliases: ()->
     aliasList = atom.config.get('node-requirer-pietropizzi.aliasList')
